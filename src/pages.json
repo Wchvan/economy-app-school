@@ -1,0 +1,67 @@
+{
+	"pages": [ 
+		{
+			"path": "pages/home/home",
+			"name":"home",
+			"style": {
+				"navigationBarTitleText": "首页"
+			}
+		},
+		{
+			"path": "pages/market/market",
+			"name":"market",
+			"style": {
+				"navigationBarTitleText": "行情"
+			}
+		},
+		{
+			"path": "pages/person/person",
+			"name":"person",
+			"style": {
+				"navigationBarTitleText": "个人"
+			}
+		},
+		{
+			"path": "pages/search/search",
+			"name":"search",
+			"style": {
+				"navigationBarTitleText": "搜索"
+			}
+		}
+	],
+	"globalStyle": {
+		"navigationBarTextStyle": "black",
+		"navigationBarTitleText": "上市公司报表",
+		"navigationBarBackgroundColor": "#F8F8F8",
+		"backgroundColor": "#F8F8F8"
+	},
+	"tabBar": {
+		"selectedColor": "#D81E06",
+		"list": [
+			{
+				"pagePath": "pages/home/home",
+				"iconPath": "/static/tabBar/home.png",
+				"selectedIconPath": "/static/tabBar/home-active.png",
+				"text": "首页"
+			},
+			{
+				"pagePath": "pages/market/market",
+				"iconPath": "/static/tabBar/market.png",
+				"selectedIconPath": "/static/tabBar/market-active.png",
+				"text": "行情"
+			},
+			{
+				"pagePath": "pages/person/person",
+				"iconPath": "/static/tabBar/person.png",
+				"selectedIconPath": "/static/tabBar/person-active.png",
+				"text": "个人"
+			}
+		]
+	},
+	"easycom": {
+		"autoscan": true,
+		"custom": {
+		  "^uni-(.*)": "@dcloudio/uni-ui/lib/uni-$1/uni-$1.vue"
+		}
+	}
+}
