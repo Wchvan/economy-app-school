@@ -1,18 +1,18 @@
 export const swiperData = [
   {
-    "colorClass": "bg-red",
-    "url": "https://web-assets.dcloud.net.cn/unidoc/zh/shuijiao.jpg",
-    "content": "内容 A"
+    "img": "img0",
+    "url": "https://new.qq.com/rain/a/20230630A08NO600",
+    "content": "A股上半年人均赚3.9万，AI概念成“最靓的仔”"
   },
   {
-    "colorClass": "bg-green",
-    "url": "https://web-assets.dcloud.net.cn/unidoc/zh/shuijiao.jpg",
-    "content": "内容 B"
+    "img": "img1",
+    "url": "https://new.qq.com/rain/a/20230630A01F5P00",
+    "content": "美团发布公告称，已完成光年之外境内外主体100%股权的收购，收购价约为20.65亿人民币。"
   },
   {
-    "colorClass": "bg-blue",
-    "url": "https://web-assets.dcloud.net.cn/unidoc/zh/shuijiao.jpg",
-    "content": "内容 C"
+    "img": "img2",
+    "url": "https://new.qq.com/rain/a/20230630A099EL00",
+    "content": "苹果股价涨至190美元以上，市值重返3万亿美元，成为世界上唯一市值超过3万亿美元的美国上市公司。"
   }
 ]
 

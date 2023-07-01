@@ -1,5 +1,5 @@
 export type swiperDataType = {
-    colorClass: string,
+    img: string,
     url: string,
     content: string
 }[]

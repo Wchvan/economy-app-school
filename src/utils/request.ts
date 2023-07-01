@@ -1,8 +1,7 @@
 import type { apiParm, apiResp } from '@/interface/api'
 import { useUserStore } from '@/store/user'
 
-
-let defalutPATH: string  // 声明默认请求地址头
+let defalutPATH: string // 声明默认请求地址头
 const defaultTokenKey = 'Authorization'
 
 // #ifndef H5
@@ -15,35 +14,33 @@ defalutPATH = '/api' //''
 
 defalutPATH = '/api'
 
-
 class Request {
-  public http (param: apiParm) {
-
+  public http(param: apiParm) {
     const userStore = useUserStore() // 这里将token放在pinia user模块中
     // 请求参数
     var url = param.url,
       method = param.method,
-      header = {},
+      header = param.header || {},
       data = param.data || {},
       params = param.params || {},
       token = userStore.token || '',
       hideLoading = param.hideLoading || false,
-      skipTokenCheck = param.skipTokenCheck 
+      skipTokenCheck = param.skipTokenCheck
 
     // 拼接完整请求地址
     var requestUrl = defalutPATH + url
-    if (Object.keys(params).length !== 0){
-      requestUrl += "?"
+    if (Object.keys(params).length !== 0) {
+      requestUrl += '?'
       let flag: boolean = false
       for (let i in params) {
-        if (flag) requestUrl += "&"
-        requestUrl += i + '='+ params[i]
+        if (flag) requestUrl += '&'
+        requestUrl += i + '=' + params[i]
         if (!flag) flag = true
       }
     }
-    
+
     // 请求方式:GET或POST(POST需配置
-    if (method) {
+    if (method && !('content-type' in header)) {
       if (method === 'POST') {
         header = {
           'content-type': 'application/json',
@@ -55,7 +52,7 @@ class Request {
       }
     }
 
-    // 判定是否携带token 
+    // 判定是否携带token
     if (!skipTokenCheck && !token) {
       uni.showToast({
         title: '请登录账号',
@@ -75,7 +72,7 @@ class Request {
         title: '加载中...',
       })
     }
-    
+
     // 返回promise
     return new Promise((resolve, reject) => {
       // 请求

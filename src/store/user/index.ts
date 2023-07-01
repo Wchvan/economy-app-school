@@ -25,20 +25,22 @@ export const useUserStore = defineStore(
       const res = await UserService.login(param)
       if (res.code === 200) {
         userName.value = param.userName
+        token.value = res.data.token
       }
       return res
     }
 
-    const register = async (params: registerParm) => {
-      const res = await UserService.register(params)
+    const register = async (param: registerParm) => {
+      const res = await UserService.register(param)
       if (res.code === 200) {
-        userName.value = res.data.token
+        userName.value = param.userName
+        token.value = res.data.token
       }
       return res
     }
 
-    const getCheckCode = async (params: codeParm) => {
-      const res = await UserService.code(params)
+    const getCheckCode = async (param: codeParm) => {
+      const res = await UserService.code(param)
       if (res.code === 200) {
         code.value = res.data.code
       }

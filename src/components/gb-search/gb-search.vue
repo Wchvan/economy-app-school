@@ -1,7 +1,7 @@
 <template>
     <view>
         <view class="fix wd100 searchBar bg-white ">
-            <uni-search-bar radius="5" placeholder="输入你想查询的公司名称" v-model="input" :clearButton="clearButton" :cancelButton="cancelButton"
+            <uni-search-bar radius="5" placeholder="输入你想查询的公司名称或股票代码" v-model="input" :clearButton="clearButton" :cancelButton="cancelButton"
             :cancelText = "cancelText"  @confirm=" emit('confirm') " @click="emit('click')" :focus="focus" />
         </view>
         <view style="height: 100rpx;"> </view>
@@ -37,7 +37,7 @@ const emit = defineEmits<{
 
 <style lang='scss' scoped>
 .searchBar {
-  top: 85rpx;
+  top: 70rpx;
   z-index: 9999;
 }
 </style>
